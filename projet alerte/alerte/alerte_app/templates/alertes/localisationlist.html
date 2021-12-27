@@ -1,0 +1,22 @@
+{% extends 'alertes/layout.html' %}
+
+						{% block content %}
+							<h1>Liste de la localisation</h1>
+								<table class="table table-bordered table-striped table-hover">
+								  <thead class="table-dark">
+									<tr>
+									  <th>Adresse </th>
+									  <th>Description</th>
+									</tr>
+								  </thead>
+								  <tbody>            
+									{% for localisation  in  Localisations %} 
+									<tr class="success">
+									  <td>{{localisation.adresse}}</td>
+									  <td>{{localisation.description}}</td>
+									</tr>
+									{% endfor %}
+								  </tbody>
+								</table>
+
+						{% endblock %}

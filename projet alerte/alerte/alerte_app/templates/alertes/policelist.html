@@ -1,0 +1,22 @@
+{% extends 'alertes/layout.html' %}
+
+						{% block content %}
+							<h1>Liste des commissariats</h1>
+								<table class="table table-bordered table-striped table-hover">
+								  <thead class="table-dark">
+									<tr>
+									  <th>Telephone </th>
+									  <th>Adresse</th>
+									</tr>
+								  </thead>
+								  <tbody>            
+									{% for police_centrale  in  Polices %} 
+									<tr class="success">
+									  <td>{{police_centrale.adresse}}</td>
+									  <td>{{police_centrale.description}}</td>
+									</tr>
+									{% endfor %}
+								  </tbody>
+								</table>
+
+						{% endblock %}

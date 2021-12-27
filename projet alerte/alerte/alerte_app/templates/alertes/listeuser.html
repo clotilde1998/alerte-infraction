@@ -1,0 +1,26 @@
+{% extends 'alertes/layout.html' %}
+
+						{% block content %}
+							<h1>Liste des Utilisateurs...</h1>
+								<table class="table table-bordered table-striped table-hover">
+								  <thead class="table-dark">
+									<tr>
+									  <th>Nom </th>
+									  <th>Prenom</th>
+									  <th>Adresse</th>
+									  <th>Telephone</th>
+									</tr>
+								  </thead>
+								  <tbody>            
+									{% for user  in  Users %} 
+									<tr class="success">
+									  <td>{{user.nom}}</td>
+									  <td>{{user.prenom}}</td>
+									  <td>{{user.adresse}}</td>
+									  <td>{{user.tel}}</td>
+									</tr>
+									{% endfor %}
+								  </tbody>
+								</table>
+
+						{% endblock %}

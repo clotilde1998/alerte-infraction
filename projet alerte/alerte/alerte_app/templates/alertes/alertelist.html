@@ -1,0 +1,32 @@
+{% extends 'alertes/layout.html' %}
+
+						{% block content %}
+							<h1>Liste des alertes infraction</h1>
+                            <div class="col-12 d-flex justify-content-end mb-2"> <a class="btn btn-primary sm " href="{% url 'nouvelle_alerte' %}">
+								Nouvelle Infraction
+						</a></div>
+						
+								<table class="table table-bordered table-striped table-hover">
+								  <thead class="table-dark">
+									<tr>
+									  <th>Heure </th>
+									  <th>Description</th>
+                                      <th>User</th>
+                                      <th>Localisation</th>
+                                      <th>police_centrale</th>
+									</tr>
+								  </thead>
+								  <tbody>            
+									{% for alerte  in  Alertees %} 
+									<tr class="success">
+									  <td>{{alerte.heure}}</td>
+									  <td>{{alerte.description}}</td>
+                                      <td>{{alerte.user}}</td>
+                                      <td>{{alerte.localisation}}</td>
+                                      <td>{{alerte.police_centrale}}</td>
+									</tr>
+									{% endfor %}
+								  </tbody>
+								</table>
+
+						{% endblock %}
